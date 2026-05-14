@@ -1,3 +1,6 @@
+Xarxa index · HTML
+Copiar
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,14 +11,13 @@
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --ink: #3a3a3a;
-    --ink-mid: #5a5a5a;
-    --ink-light: #8a8a8a;
-    --ink-faint: #d0d0d0;
+    --ink: #2e2e2e;
+    --ink-mid: #4a4a4a;
+    --ink-light: #6a6a6a;
+    --ink-faint: #b0b0b0;
     --paper: #ffffff;
     --blue: #1A3A5C;
-    --blue-mid: #2E6DA4;
-    --line: rgba(0,0,0,0.09);
+    --line: rgba(0,0,0,0.1);
   }
   html, body { height: 100%; }
   body {
@@ -26,6 +28,8 @@
     display: flex;
     flex-direction: column;
   }
+ 
+  /* NAV */
   nav {
     display: flex;
     justify-content: space-between;
@@ -40,12 +44,11 @@
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--ink);
-    text-decoration: none;
     cursor: pointer;
   }
   .nav-about {
     font-family: 'Courier New', monospace;
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--ink-light);
@@ -55,6 +58,8 @@
     padding: 0;
   }
   .nav-about:hover { color: var(--ink); }
+ 
+  /* SCREENS */
   .screen {
     display: none;
     flex: 1;
@@ -65,19 +70,18 @@
     min-height: calc(100vh - 57px);
   }
   .screen.active { display: flex; }
+ 
+  /* HOME */
   #screen-home .tagline {
-    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    font-size: clamp(1.3rem, 4vw, 1.7rem);
     color: var(--ink-mid);
-    line-height: 1.7;
+    line-height: 1.5;
     text-align: center;
-    max-width: 400px;
     margin-bottom: 3.5rem;
     font-style: italic;
+    letter-spacing: 0.01em;
   }
-  #screen-home .tagline em {
-    font-style: normal;
-    color: var(--blue);
-  }
+ 
   .btn-group {
     display: flex;
     flex-direction: column;
@@ -102,18 +106,14 @@
     color: var(--ink);
     transition: all 0.18s;
   }
-  .btn-main:hover {
-    background: var(--ink);
-    color: #fff;
-  }
+  .btn-main:hover { background: var(--ink); color: #fff; }
   .btn-main.primary {
     border-color: var(--blue);
     color: var(--blue);
   }
-  .btn-main.primary:hover {
-    background: var(--blue);
-    color: #fff;
-  }
+  .btn-main.primary:hover { background: var(--blue); color: #fff; }
+ 
+  /* PERMANENT */
   #screen-permanent .screen-title {
     font-family: 'Courier New', monospace;
     font-size: 10px;
@@ -134,23 +134,13 @@
     justify-content: space-between;
     padding: 1.2rem 0;
     border-bottom: 1px solid var(--line);
-    gap: 1.5rem;
   }
   .act-row:first-child { border-top: 1px solid var(--line); }
   .act-num {
     font-family: 'Courier New', monospace;
-    font-size: 11px;
-    color: var(--ink-faint);
+    font-size: 12px;
+    color: var(--ink-mid);
     letter-spacing: 0.1em;
-    flex-shrink: 0;
-    width: 32px;
-  }
-  .act-type {
-    font-family: 'Courier New', monospace;
-    font-size: 10px;
-    color: var(--ink-light);
-    letter-spacing: 0.08em;
-    flex: 1;
   }
   .act-enter {
     font-family: 'Courier New', monospace;
@@ -162,35 +152,45 @@
     border: 1px solid var(--ink-faint);
     padding: 5px 12px;
     transition: all 0.15s;
-    flex-shrink: 0;
   }
   .act-enter:hover {
     background: var(--ink);
     color: #fff;
     border-color: var(--ink);
   }
+ 
+  /* BACK BUTTON — triangle */
   .btn-back {
     margin-top: 2.5rem;
-    font-family: 'Courier New', monospace;
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--ink-faint);
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0;
+    padding: 6px;
+    opacity: 0.35;
+    transition: opacity 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  .btn-back:hover { color: var(--ink); }
+  .btn-back:hover { opacity: 0.8; }
+  .btn-back svg {
+    width: 18px;
+    height: 18px;
+    fill: var(--ink);
+  }
+ 
+  /* ABOUT */
   #screen-about { justify-content: flex-start; padding-top: 4rem; }
-  .about-inner { max-width: 420px; width: 100%; }
+  .about-inner { max-width: 400px; width: 100%; }
   .about-inner p {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: var(--ink-mid);
     line-height: 1.9;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.5rem;
   }
-  .about-inner p:last-of-type { margin-bottom: 2rem; }
+  .about-inner p:last-of-type { margin-bottom: 0; }
+ 
+  /* FOOTER */
   .page-footer {
     padding: 1.5rem 2rem;
     border-top: 1px solid var(--line);
@@ -203,11 +203,13 @@
     text-transform: uppercase;
     color: var(--ink-faint);
   }
+ 
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to   { opacity: 1; transform: translateY(0); }
   }
   .screen.active { animation: fadeIn 0.3s ease both; }
+ 
   @media (max-width: 480px) {
     nav { padding: 1.2rem 1.4rem; }
     .screen { padding: 2.5rem 1.4rem; }
@@ -221,53 +223,57 @@
   <button class="nav-about" onclick="show('about')">Acerca</button>
 </nav>
  
+<!-- HOME -->
 <div id="screen-home" class="screen active">
-  <p class="tagline">
-    La reflexión no ocurre en la plataforma.<br>
-    <em>La plataforma escucha<br>cuando la reflexión ya ocurrió.</em>
-  </p>
+  <p class="tagline">Una pregunta.</p>
   <div class="btn-group">
     <a href="https://tally.so/r/QKvqA1" target="_blank" class="btn-main primary">Acto Vivo</a>
     <button class="btn-main" onclick="show('permanent')">Acto Permanente</button>
   </div>
 </div>
  
+<!-- PERMANENT -->
 <div id="screen-permanent" class="screen">
   <p class="screen-title">Actos permanentes</p>
   <ul class="act-list">
     <li class="act-row">
       <span class="act-num">004</span>
-      <span class="act-type">Experiencial</span>
       <a href="https://tally.so/r/81PDel" target="_blank" class="act-enter">Entrar</a>
     </li>
     <li class="act-row">
       <span class="act-num">003</span>
-      <span class="act-type">Deliberativo</span>
       <a href="https://tally.so/r/7RD8gz" target="_blank" class="act-enter">Entrar</a>
     </li>
     <li class="act-row">
       <span class="act-num">002</span>
-      <span class="act-type">Deliberativo</span>
       <a href="https://tally.so/r/rjabgl" target="_blank" class="act-enter">Entrar</a>
     </li>
     <li class="act-row">
       <span class="act-num">001</span>
-      <span class="act-type">Deliberativo</span>
       <a href="https://tally.so/r/XxJvvO" target="_blank" class="act-enter">Entrar</a>
     </li>
   </ul>
-  <button class="btn-back" onclick="show('home')">← Volver</button>
+  <button class="btn-back" onclick="show('home')">
+    <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="14,2 4,9 14,16"/>
+    </svg>
+  </button>
 </div>
  
+<!-- ABOUT -->
 <div id="screen-about" class="screen">
   <div class="about-inner">
-    <p>Xarxa es un ejercicio de reflexión colectiva basado en preguntas humanas formuladas con cuidado.</p>
-    <p>Cada acto plantea una sola pregunta. No busca convencer, influir ni generar debate.</p>
-    <p>No recopila datos personales ni identifica a quienes participan.</p>
-    <p>No requiere registro. No tiene límite de tiempo.</p>
-    <p>Responder es voluntario. No responder también es válido.</p>
-    <button class="btn-back" onclick="show('home')">← Volver</button>
+    <p>Xarxa presenta una pregunta.</p>
+    <p>No recopila quién responde.</p>
+    <p>No comunica el resultado a quien participó.</p>
+    <p>No cierra.</p>
+    <p>Lo que ocurre, ocurre solo.</p>
   </div>
+  <button class="btn-back" onclick="show('home')">
+    <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="14,2 4,9 14,16"/>
+    </svg>
+  </button>
 </div>
  
 <div class="page-footer">
