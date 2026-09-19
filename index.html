@@ -26,7 +26,6 @@
     flex-direction: column;
   }
  
-  /* NAV */
   nav {
     display: flex;
     justify-content: space-between;
@@ -56,7 +55,6 @@
   }
   .nav-about:hover { color: var(--ink); }
  
-  /* SCREENS */
   .screen {
     display: none;
     flex: 1;
@@ -68,7 +66,6 @@
   }
   .screen.active { display: flex; }
  
-  /* HOME */
   #screen-home .tagline {
     font-size: clamp(1.3rem, 4vw, 1.7rem);
     color: var(--ink-mid);
@@ -110,7 +107,6 @@
   }
   .btn-main.primary:hover { background: var(--blue); color: #fff; }
  
-  /* PERMANENT */
   #screen-permanent .screen-title {
     font-family: 'Courier New', monospace;
     font-size: 10px;
@@ -156,7 +152,6 @@
     border-color: var(--ink);
   }
  
-  /* BACK BUTTON */
   .btn-back {
     margin-top: 2.5rem;
     background: none;
@@ -176,7 +171,6 @@
     fill: var(--ink);
   }
  
-  /* ABOUT */
   #screen-about { justify-content: flex-start; padding-top: 4rem; }
   .about-inner { max-width: 400px; width: 100%; }
   .about-inner p {
@@ -187,7 +181,6 @@
   }
   .about-inner p:last-of-type { margin-bottom: 0; }
  
-  /* FOOTER */
   .page-footer {
     padding: 1.5rem 2rem;
     border-top: 1px solid var(--line);
@@ -220,19 +213,21 @@
   <button class="nav-about" onclick="show('about')">Acerca</button>
 </nav>
  
-<!-- HOME -->
 <div id="screen-home" class="screen active">
   <p class="tagline">Una pregunta.</p>
   <div class="btn-group">
-    <a href="https://tally.so/r/A7M02y" target="_blank" class="btn-main primary">Acto Vivo (008)</a>
+    <a href="https://tally.so/r/J9ykr7" target="_blank" class="btn-main primary">Acto Vivo (009)</a>
     <button class="btn-main" onclick="show('permanent')">Actos Permanentes</button>
   </div>
 </div>
  
-<!-- PERMANENT -->
 <div id="screen-permanent" class="screen">
   <p class="screen-title">Actos permanentes</p>
   <ul class="act-list">
+    <li class="act-row">
+      <span class="act-num">008 <span style="color:var(--ink-faint);font-size:10px;">(Ago 2026)</span></span>
+      <a href="https://tally.so/r/A7M02y" target="_blank" class="act-enter">Entrar</a>
+    </li>
     <li class="act-row">
       <span class="act-num">007 <span style="color:var(--ink-faint);font-size:10px;">(Jul 2026)</span></span>
       <a href="https://tally.so/r/jaqz8J" target="_blank" class="act-enter">Entrar</a>
@@ -269,7 +264,6 @@
   </button>
 </div>
  
-<!-- ABOUT -->
 <div id="screen-about" class="screen">
   <div class="about-inner">
     <p>Xarxa —red, en catalán— es un ejercicio de reflexión colectiva que forma parte de una investigación en curso.</p>
